@@ -17,13 +17,11 @@ int main()
   cin >> n >> m;
   vvl a(n, vl(m));
   rep(i, n) rep(j, m) cin >> a[i][j];
-  for (ll i = 0; i < m; i++)
-    for (ll j = i + 1; j < m; j++)
-    {
-      ll t = 0;
-      for (ll k = 0; k < n; k++)
-        t += max(a[k][i], a[k][j]);
-      score = max(score, t);
-    }
+  rep(i, m) for (ll j = i + 1; j < m; j++)
+  {
+    ll t = 0;
+    rep(k, n) t += max(a[k][i], a[k][j]);
+    score = max(score, t);
+  }
   cout << score << endl;
 }
