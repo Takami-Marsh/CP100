@@ -13,5 +13,7 @@ const ll INF = 1 << 29;
 
 int main()
 {
-  
+  ll a, b, c, x, y;
+  cin >> a >> b >> c >> x >> y;
+  cout << min(a * x + b * y, min(2 * c * max(x, y), 2 * c * min(x, y) + ((x > y) ? a : b) * abs(x - y))) << endl;
 }
